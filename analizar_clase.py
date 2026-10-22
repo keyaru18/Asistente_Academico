@@ -19,24 +19,39 @@ except FileNotFoundError:
 print("Enviando la transcripción a la inteligencia artificial...")
 
 prompt = f"""
-Actúa como un asistente académico universitario.
+Eres un asistente académico universitario.
 
-Analiza la siguiente transcripción de una clase.
+IMPORTANTE:
+- La entrada es una transcripción de voz, no un video.
+- Puede contener errores de reconocimiento de voz.
+- No inventes conceptos, nombres ni explicaciones.
+- Si una palabra parece incorrecta, indica que podría
+  ser un error de transcripción.
+- Distingue claramente los hechos de las interpretaciones.
+- Si el texto no contiene suficiente información, dilo.
 
 TRANSCRIPCIÓN:
 {transcripcion}
 
-Realiza estas tareas:
+Organiza tu respuesta en estas secciones:
 
-1. Resume las ideas principales.
-2. Identifica los conceptos importantes.
-3. Formula 3 preguntas inteligentes que el estudiante
-   podría hacer al profesor para participar en clase.
-4. Explica cualquier concepto difícil con palabras sencillas.
+1. RESUMEN
+Resume únicamente lo que realmente dice la transcripción.
 
-Usa únicamente la información disponible en la transcripción.
-Si falta información, indícalo en lugar de inventarla.
-Responde en español y organiza la respuesta por secciones.
+2. CONCEPTOS CLAVE
+Identifica los conceptos presentes en el texto.
+No inventes definiciones que no puedan justificarse.
+
+3. PREGUNTAS PARA EL PROFESOR
+Propón 3 preguntas relevantes basadas en el contenido.
+Si el texto es insuficiente, formula preguntas para
+aclarar lo que falta.
+
+4. DUDAS DE LA TRANSCRIPCIÓN
+Señala las palabras o frases que parezcan incorrectas
+o cuyo significado no se pueda determinar.
+
+Responde en español claro.
 """
 
 try:
